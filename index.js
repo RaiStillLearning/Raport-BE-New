@@ -57,6 +57,8 @@ const getAllLingkupMateri = require("./src/controllers/Guru/LingkupMateri/getAll
 const getLingkupMateriById = require("./src/controllers/Guru/LingkupMateri/getLingkupMateriById");
 const deleteLingkupMateri = require("./src/controllers/Guru/LingkupMateri/deleteLingkupMateri");
 const updateLingkupMateri = require("./src/controllers/Guru/LingkupMateri/updateLingkupMateri");
+//asesmen sumatif routes
+const addAsesmenSumatif = require("./src/controllers/AsesmenSumatif/addAsesmenSumatif")
 
 //logic login post method
 app.post("/register", async (req, res) => {
@@ -177,6 +179,8 @@ app.get("/Lingkupmateri", getAllLingkupMateri)
 app.get("/Lingkupmateri/:id", getLingkupMateriById)
 app.delete("/Lingkupmateri/:id", deleteLingkupMateri)
 app.patch("/Lingkupmateri/:id", updateLingkupMateri)
+//asesmen sumatif routes
+app.post("/AsesmenSumatif", addAsesmenSumatif)
 
 // run server
 app.listen(5000, () => {
