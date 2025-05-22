@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const bcrypt = require("bcrypt"); // ✅ Tambahkan ini
+const AsesmenSumatif = require("./src/Schema/Guru/AsesmenSumatif");
 
 require("dotenv").config();
 
@@ -60,6 +61,7 @@ const updateLingkupMateri = require("./src/controllers/Guru/LingkupMateri/update
 //asesmen sumatif routes
 const addAsesmenSumatif = require("./src/controllers/AsesmenSumatif/addAsesmenSumatif");
 const getAllAsesmenSumatif = require("./src/controllers/AsesmenSumatif/getAllAsesmenSumatif");
+const getAsesmenSumatifByKelas = require("./src/controllers/AsesmenSumatif/getAsesmenSumatifByKelas");
 
 //logic login post method
 app.post("/register", async (req, res) => {
@@ -181,8 +183,22 @@ app.get("/Lingkupmateri/:id", getLingkupMateriById)
 app.delete("/Lingkupmateri/:id", deleteLingkupMateri)
 app.patch("/Lingkupmateri/:id", updateLingkupMateri)
 //asesmen sumatif routes
-app.post("/AsesmenSumatif", addAsesmenSumatif)
-app.get("/AsesmenSumatif", getAllAsesmenSumatif)
+app.post('/AsesmenSumatif', async (req, res) => {
+  const data = req.body;
+  console.log('Data masuk:', data); // Log data dari frontend
+
+  try {
+    const newDoc = await AsesmenSumatif.create(data);
+    console.log('Data berhasil disimpan:', newDoc);
+    res.status(201).json(newDoc);
+  } catch (err) {
+    console.error('Error saat simpan data:', err);
+    res.status(500).json({ message: 'Gagal tambah data', error: err.message });
+  }
+});
+app.get('/AsesmenSumatif', getAllAsesmenSumatif)
+
+app.get("/AsesmenSumatif/:kelas", getAsesmenSumatifByKelas)
 
 // run server
 app.listen(5000, () => {
