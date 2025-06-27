@@ -13,7 +13,7 @@ const addTujuanPembelajaran = async (req, res) => {
 
     return res.status(201).json({
       status: "success",
-      message: "Data berhasil ditambahkan",
+      message: "Data berhasil ditambahkan", 
       data: newTujuanPembelajaran,
     });
   } catch (error) {

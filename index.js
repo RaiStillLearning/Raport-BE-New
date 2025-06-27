@@ -62,7 +62,7 @@ const updateLingkupMateri = require("./src/controllers/Guru/LingkupMateri/update
 const addAsesmenSumatif = require("./src/controllers/AsesmenSumatif/addAsesmenSumatif");
 const getAllAsesmenSumatif = require("./src/controllers/AsesmenSumatif/getAllAsesmenSumatif");
 const getAsesmenSumatifByKelas = require("./src/controllers/AsesmenSumatif/getAsesmenSumatifByKelas");
-
+const patchAsesmenSumatif = require("./src/controllers/AsesmenSumatif/patchAsesmenSumatif");
 //logic login post method
 app.post("/register", async (req, res) => {
   try {
@@ -183,22 +183,11 @@ app.get("/Lingkupmateri/:id", getLingkupMateriById)
 app.delete("/Lingkupmateri/:id", deleteLingkupMateri)
 app.patch("/Lingkupmateri/:id", updateLingkupMateri)
 //asesmen sumatif routes
-app.post('/AsesmenSumatif', async (req, res) => {
-  const data = req.body;
-  console.log('Data masuk:', data); // Log data dari frontend
-
-  try {
-    const newDoc = await AsesmenSumatif.create(data);
-    console.log('Data berhasil disimpan:', newDoc);
-    res.status(201).json(newDoc);
-  } catch (err) {
-    console.error('Error saat simpan data:', err);
-    res.status(500).json({ message: 'Gagal tambah data', error: err.message });
-  }
-});
+app.post('/AsesmenSumatif', addAsesmenSumatif)
 app.get('/AsesmenSumatif', getAllAsesmenSumatif)
-
 app.get("/AsesmenSumatif/:kelas", getAsesmenSumatifByKelas)
+app.patch('/AsesmenSumatif/:id', patchAsesmenSumatif);
+
 
 // run server
 app.listen(5000, () => {
