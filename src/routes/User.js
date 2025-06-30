@@ -18,7 +18,7 @@ const verifyToken = (req, res, next) => {
 };
 
 // GET /user/dashboard
-router.get("/dashboard", verifyToken, (req, res) => {
+router.get("/SideBar", verifyToken, (req, res) => {
   res.json({
     message: `Halo ${req.user.name}, kamu login sebagai ${req.user.role}`,
   });
