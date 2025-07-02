@@ -1,4 +1,4 @@
-const AsesmenSumatif = require('../../Schema/Guru/AsesmenSumatif');
+const AsesmenSumatif = require('../../../Schema/Guru/AsesmenSumatif');
 
 const getAllAsesmenSumatif = async (req, res) => {
   try {
