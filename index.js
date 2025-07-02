@@ -47,11 +47,11 @@ const addKelas = require("./src/controllers/Guru/DataKelas/addKelas");
 const getAllKelas = require("./src/controllers/Guru/DataKelas/getAllKelas");
 const getKelasById = require("./src/controllers/Guru/DataKelas/getKelasById");
 //Tujuan Pembelajaran import models schema CRUD
-const addTujuanPembelajaran = require("./src/controllers/TujuanPembelajaran/addTujuanPembelajaran");
-const getAllTujuanPembelajaran = require("./src/controllers/TujuanPembelajaran/getAllTujuanPembelajaran");
-const getTujuanPembelajaranById = require("./src/controllers/TujuanPembelajaran/getTujuanPembelajaranById");
-const updateTujuanPembelajaran = require("./src/controllers/TujuanPembelajaran/updateTujuanPembelajaran");
-const deleteTujuanPembelajaran = require("./src/controllers/TujuanPembelajaran/deleteTujuanPembelajaran");
+const addTujuanPembelajaran = require("./src/controllers/Guru/TujuanPembelajaran/addTujuanPembelajaran");
+const getAllTujuanPembelajaran = require("./src/controllers/Guru/TujuanPembelajaran/getAllTujuanPembelajaran");
+const getTujuanPembelajaranById = require("./src/controllers/Guru/TujuanPembelajaran/getTujuanPembelajaranById");
+const updateTujuanPembelajaran = require("./src/controllers/Guru/TujuanPembelajaran/updateTujuanPembelajaran");
+const deleteTujuanPembelajaran = require("./src/controllers/Guru/TujuanPembelajaran/deleteTujuanPembelajaran");
 //lingkup materi routes
 const addLingkupMateri = require("./src/controllers/Guru/LingkupMateri/addLingkupMateri");
 const getAllLingkupMateri = require("./src/controllers/Guru/LingkupMateri/getAllLingkupMateri");

@@ -1,4 +1,4 @@
-const TujuanPembelajaran = require("../../Schema/Guru/TujuanPembelajaran");
+const TujuanPembelajaran = require("../../../Schema/Guru/TujuanPembelajaran");
 
 const getAllTujuanPembelajaran = async (req, res) => {
   try {
