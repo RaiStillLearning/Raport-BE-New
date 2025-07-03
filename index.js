@@ -63,6 +63,8 @@ const addAsesmenSumatif = require("./src/controllers/Guru/AsesmenSumatif/addAses
 const getAllAsesmenSumatif = require("./src/controllers/Guru/AsesmenSumatif/getAllAsesmenSumatif");
 const getAsesmenSumatifByKelas = require("./src/controllers/Guru/AsesmenSumatif/getAsesmenSumatifByKelas");
 const patchAsesmenSumatif = require("./src/controllers/Guru/AsesmenSumatif/patchAsesmenSumatif");
+// asesmen formatif routes
+const addAsesmenFormatif = require("./src/controllers/Guru/AsesmenFormatif/addAsesmenFormatif");
 //logic login post method
 app.post("/register", async (req, res) => {
   try {
@@ -187,7 +189,8 @@ app.post('/AsesmenSumatif', addAsesmenSumatif)
 app.get('/AsesmenSumatif', getAllAsesmenSumatif)
 app.get("/AsesmenSumatif/:kelas", getAsesmenSumatifByKelas)
 app.patch('/AsesmenSumatif/:id', patchAsesmenSumatif);
-
+// asesmen formatif routes
+app.post('/AsesmenFormatif', addAsesmenFormatif);
 
 // run server
 app.listen(5000, () => {
